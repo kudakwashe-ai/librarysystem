@@ -1,0 +1,46 @@
+[
+  {
+    "id": "maint-1",
+    "type": "Corrective",
+    "title": "Resolved Concurrent Checkout Race Condition",
+    "description": "Fixed transactional race condition where simultaneous checkout requests for the last physical textbook copy resulted in negative book inventory.",
+    "severity": "High",
+    "component": "Inventory Service / Borrow API",
+    "resolvedDate": "2026-10-18",
+    "actionTaken": "Implemented row-level mutex locking and optimistic concurrency checks in SQLite/PostgreSQL checkout transactions.",
+    "status": "Resolved"
+  },
+  {
+    "id": "maint-2",
+    "type": "Adaptive",
+    "title": "University Azure AD / SAML SSO Integration & Node 22 Upgrade",
+    "description": "Adapted the authentication pipeline to support campus-wide Azure Active Directory SAML 2.0 and upgraded runtime from Node.js 18 to Node 22 LTS.",
+    "severity": "Medium",
+    "component": "Auth Service & Runtime Engine",
+    "resolvedDate": "2026-10-25",
+    "actionTaken": "Integrated passport-saml token validation and updated package dependencies to comply with University IT ISO-27001 mandates.",
+    "status": "Implemented"
+  },
+  {
+    "id": "maint-3",
+    "type": "Perfective",
+    "title": "Sub-50ms Catalog Search Indexing & Predictive Auto-Suggest",
+    "description": "Enhanced search UX by adding trie-based search indexing, fuzzy keyword caching, and algorithmic popular book recommendations based on user department.",
+    "severity": "Low",
+    "component": "Catalog Search Engine",
+    "resolvedDate": "2026-11-01",
+    "actionTaken": "Reduced p95 search latency from 420ms to 38ms; student catalog engagement increased by 42%.",
+    "status": "Deployed"
+  },
+  {
+    "id": "maint-4",
+    "type": "Preventive",
+    "title": "Automated Log Rotation, DB VACUUM & Weekly Dependency CVE Scanning",
+    "description": "Implemented automated nightly database VACUUM/re-indexing, 30-day log rotation with gzip compression, and automated npm audit GitHub actions.",
+    "severity": "Medium",
+    "component": "DevOps & Database Storage",
+    "resolvedDate": "2026-11-02",
+    "actionTaken": "Prevents database fragmentation and eliminates risk of disk exhaustion or unpatched zero-day vulnerabilities in third-party libraries.",
+    "status": "Active"
+  }
+]

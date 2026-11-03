@@ -1,0 +1,224 @@
+/* Online Library System - Stylesheet
+   Design: Exact Match to Dashboard Screenshot
+   Layout: Dark Navy Sidebar (#0A1329) + Light Blue Canvas (#F1F5F9) + White 3D Cards
+   Typography: Plus Jakarta Sans
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --sidebar-bg: #09132B;
+  --sidebar-hover: #132247;
+  --sidebar-active: #2563EB;
+  --canvas-bg: #F0F4F9;
+  --card-bg: #FFFFFF;
+  --primary-blue: #2563EB;
+  --primary-hover: #1D4ED8;
+  --text-dark: #0F172A;
+  --text-muted: #64748B;
+  --border-light: rgba(226, 232, 240, 0.9);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-sans) !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--canvas-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Sidebar styling */
+.sidebar-container {
+  background-color: #09132B;
+  background-image: 
+    radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sidebar book watermark */
+.sidebar-watermark {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.08;
+  pointer-events: none;
+  color: #FFFFFF;
+}
+
+/* Sidebar nav item active pill */
+.nav-item-active {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.nav-item-active svg {
+  color: #FFFFFF !important;
+}
+
+.nav-item-inactive {
+  color: #94A3B8 !important;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-item-inactive:hover {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-item-inactive:hover svg {
+  color: #FFFFFF !important;
+}
+
+/* Hero Banner Gradient */
+.hero-banner {
+  background: linear-gradient(105deg, #17387A 0%, #1E4CB0 35%, #2563EB 60%, rgba(37, 99, 235, 0.85) 100%),
+              url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80') right center / cover no-repeat;
+  background-blend-mode: overlay;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glass-icon {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Modern 3D White Cards */
+.card-ui {
+  background: #FFFFFF;
+  border: 0.5px solid rgba(226, 232, 240, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.04), 0 8px 16px -4px rgba(15, 23, 42, 0.03);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-ui:hover {
+  border-color: rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 0 12px rgba(37, 99, 235, 0.1);
+}
+
+/* Stat Card Circular Arrow Button */
+.stat-arrow-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EFF6FF;
+  color: #2563EB;
+  transition: all 0.15s ease;
+}
+
+.card-ui:hover .stat-arrow-btn {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+/* Book Cover Mockup Preview Box */
+.book-cover-mock {
+  width: 86px;
+  height: 114px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Pill buttons */
+.filter-pill-active {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border: 0.5px solid #1D4ED8 !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.filter-pill-active svg {
+  color: #FFFFFF !important;
+}
+
+.filter-pill-inactive {
+  background: #FFFFFF !important;
+  color: #334155 !important;
+  border: 0.5px solid rgba(226, 232, 240, 0.9) !important;
+  transition: all 0.15s ease;
+}
+
+.filter-pill-inactive:hover {
+  background: #F8FAFC !important;
+  border-color: #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+/* Action button */
+.btn-primary-blue {
+  background: #2563EB;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.28);
+  transition: all 0.15s ease;
+}
+
+.btn-primary-blue:hover {
+  background: #1D4ED8;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.38);
+  transform: translateY(-1px);
+}
+
+.btn-primary-blue:active {
+  transform: translateY(1px);
+}
+
+/* Details link */
+.link-details {
+  color: #2563EB;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s ease;
+}
+
+.link-details:hover {
+  color: #1D4ED8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "bk-101",
+    "title": "Clean Architecture: A Craftsman's Guide",
+    "author": "Robert C. Martin",
+    "isbn": "978-0134494166",
+    "category": "Software Engineering",
+    "totalCopies": 6,
+    "availableCopies": 4,
+    "shelfLocation": "Stack 4B - SE-01",
+    "publicationYear": 2018,
+    "description": "Universal rules of software architecture and system deployment patterns."
+  },
+  {
+    "id": "bk-102",
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "isbn": "978-1449373320",
+    "category": "Distributed Systems",
+    "totalCopies": 5,
+    "availableCopies": 3,
+    "shelfLocation": "Stack 2A - DS-14",
+    "publicationYear": 2017,
+    "description": "The big ideas behind reliable, scalable, and maintainable systems."
+  },
+  {
+    "id": "bk-103",
+    "title": "Continuous Delivery: Reliable Software Releases",
+    "author": "Jez Humble, David Farley",
+    "isbn": "978-0321601919",
+    "category": "DevOps & Deployment",
+    "totalCopies": 4,
+    "availableCopies": 2,
+    "shelfLocation": "Stack 5C - DO-08",
+    "publicationYear": 2010,
+    "description": "Blue-Green, Canary, and automated release pipeline strategies."
+  },
+  {
+    "id": "bk-104",
+    "title": "Site Reliability Engineering (SRE)",
+    "author": "Betsy Beyer, Chris Jones, et al.",
+    "isbn": "978-1491929124",
+    "category": "Operations & Maintenance",
+    "totalCopies": 5,
+    "availableCopies": 5,
+    "shelfLocation": "Stack 5C - OP-02",
+    "publicationYear": 2016,
+    "description": "Google’s operational handbook on monitoring, SLOs, and incident rollback."
+  },
+  {
+    "id": "bk-105",
+    "title": "Modern Software Engineering",
+    "author": "David Farley",
+    "isbn": "978-0137314911",
+    "category": "Software Engineering",
+    "totalCopies": 7,
+    "availableCopies": 4,
+    "shelfLocation": "Stack 4B - SE-19",
+    "publicationYear": 2021,
+    "description": "A disciplined approach to iterative development, testing, and deployment."
+  },
+  {
+    "id": "bk-106",
+    "title": "Database System Concepts (7th Edition)",
+    "author": "Silberschatz, Korth, Sudarshan",
+    "isbn": "978-0078022159",
+    "category": "Databases",
+    "totalCopies": 8,
+    "availableCopies": 6,
+    "shelfLocation": "Stack 1D - DB-05",
+    "publicationYear": 2019,
+    "description": "Fundamentals of database transactions, ACID properties, and migrations."
+  }
+]

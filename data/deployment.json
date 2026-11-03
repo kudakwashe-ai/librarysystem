@@ -1,0 +1,78 @@
+{
+  "strategy": "Blue-Green",
+  "activeEnvironment": "Blue",
+  "trafficDistribution": {
+    "bluePercent": 100,
+    "greenPercent": 0
+  },
+  "environments": {
+    "blue": {
+      "name": "Blue (Production v1.0.0)",
+      "version": "1.0.0-prod",
+      "status": "HEALTHY & LIVE (100% Traffic)",
+      "uptime": "99.98%",
+      "deployedAt": "2026-10-15T08:00:00Z",
+      "instances": 4,
+      "p95Latency": "142ms",
+      "errorRate": "0.02%"
+    },
+    "green": {
+      "name": "Green (Staged v1.1.0)",
+      "version": "1.1.0-release",
+      "status": "ISOLATED / QUARANTINED",
+      "uptime": "100%",
+      "deployedAt": "2026-11-03T10:00:00Z",
+      "instances": 4,
+      "p95Latency": "118ms",
+      "errorRate": "0.00%"
+    }
+  },
+  "preDeploymentChecklist": [
+    {
+      "id": "chk-1",
+      "activity": "Automated Database Migration & Integrity Dry-Run",
+      "status": "COMPLETED",
+      "timestamp": "2026-11-03T09:15:00Z",
+      "details": "Verified forward and backward migration scripts on sanitized production database replica with 120,000 book records."
+    },
+    {
+      "id": "chk-2",
+      "activity": "Full Security Penetration & OWASP Top-10 Audit",
+      "status": "COMPLETED",
+      "timestamp": "2026-11-03T09:30:00Z",
+      "details": "Executed automated SAST/DAST scans; verified JWT token signing algorithm, rate limiting, and RBAC privilege separation."
+    },
+    {
+      "id": "chk-3",
+      "activity": "Concurrency & Stress Load Testing (5,000 Students)",
+      "status": "COMPLETED",
+      "timestamp": "2026-11-03T09:45:00Z",
+      "details": "Simulated 5,000 simultaneous book checkout transactions using k6; p95 latency remained under 180ms with 0% dropped connections."
+    },
+    {
+      "id": "chk-4",
+      "activity": "End-to-End User Acceptance Testing (UAT) Sign-Off",
+      "status": "COMPLETED",
+      "timestamp": "2026-11-03T10:00:00Z",
+      "details": "Formal acceptance testing approved by Head Librarian and Student Union representatives across all key library workflows."
+    },
+    {
+      "id": "chk-5",
+      "activity": "Production Secrets, SSL/TLS & Automated Backup Snapshot",
+      "status": "COMPLETED",
+      "timestamp": "2026-11-03T10:15:00Z",
+      "details": "Encrypted backup snapshot stored in off-site S3 cold storage; rotated production JWT keys; verified TLS 1.3 cert expiration in 2027."
+    }
+  ],
+  "rollbackHistory": [
+    {
+      "id": "rb-1793723366871",
+      "timestamp": "2026-11-03T16:29:26.871Z",
+      "action": "Immediate Blue-Green Traffic Pointer Swap (Green -> Blue)",
+      "timeToRestore": "42 seconds",
+      "rootCause": "CRITICAL REGRESSION: Users unable to authenticate (OAuth JWT handshake failure in Green v1.1.0 release)",
+      "executedBy": "Alex Rivera (Lead Architect)",
+      "status": "SYSTEM FULLY RESTORED"
+    }
+  ]
+}

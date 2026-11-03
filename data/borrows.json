@@ -1,0 +1,24 @@
+[
+  {
+    "id": "bor-1",
+    "userId": "usr-1",
+    "bookId": "bk-101",
+    "bookTitle": "Clean Architecture: A Craftsman's Guide",
+    "borrowerName": "Alex Rivera (Lead Architect)",
+    "borrowedAt": "2026-10-31T16:28:51.761Z",
+    "dueDate": "2026-11-14T16:28:51.761Z",
+    "returnedAt": null,
+    "status": "Active"
+  },
+  {
+    "id": "bor-2",
+    "userId": "usr-1",
+    "bookId": "bk-103",
+    "bookTitle": "Continuous Delivery: Reliable Software Releases",
+    "borrowerName": "Alex Rivera (Lead Architect)",
+    "borrowedAt": "2026-10-26T16:28:51.761Z",
+    "dueDate": "2026-11-09T16:28:51.761Z",
+    "returnedAt": null,
+    "status": "Active"
+  }
+]
