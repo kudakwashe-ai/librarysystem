@@ -12,7 +12,9 @@ const STATE = {
   searchQuery: ''
 };
 
-const DEMO_ACCOUNTS = {
+const ROLE_ACCOUNTS = {
+  student: { email: 'student@library.edu', password: 'Student@123' },
+  librarian: { email: 'librarian@library.edu', password: 'Librarian@123' },
   admin: { email: 'admin@library.edu', password: 'Admin@123' }
 };
 
@@ -23,14 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Check if user is authenticated or should see auth gate
 function checkAuthGate() {
-  // Purge any stale fake user sessions from localStorage
-  if (STATE.user && STATE.user.email !== 'admin@library.edu') {
-    localStorage.removeItem('library_token');
-    localStorage.removeItem('library_user');
-    STATE.token = null;
-    STATE.user = null;
-  }
-
   if (STATE.token && STATE.user) {
     showAuthenticatedPortal();
     loadBooks();
@@ -48,6 +42,21 @@ function showAuthGate() {
   clearAuthAlert();
 }
 
+function fillRoleCredentials(role) {
+  const creds = ROLE_ACCOUNTS[role];
+  if (creds) {
+    document.getElementById('input-login-email').value = creds.email;
+    document.getElementById('input-login-password').value = creds.password;
+    submitLogin(creds.email, creds.password);
+  }
+}
+
+// Backward compatibility helper
+function fillDemoCredentials(role) {
+  fillRoleCredentials(role);
+}
+
+// Dynamically adapts dashboard interface to the authenticated user's role
 function showAuthenticatedPortal() {
   const gate = document.getElementById('auth-gate-screen');
   const portal = document.getElementById('main-portal-view');
@@ -60,20 +69,63 @@ function showAuthenticatedPortal() {
   const menuEmailEl = document.getElementById('menu-user-email');
   const menuBadgeEl = document.getElementById('menu-user-badge');
   const snavInventory = document.getElementById('snav-inventory');
+  const snavLoansLabel = document.getElementById('snav-loans-label');
+  const brandSubtitle = document.getElementById('sidebar-brand-subtitle');
+  const heroTitle = document.getElementById('hero-title');
+  const heroDesc = document.getElementById('hero-desc');
 
   if (STATE.user) {
-    const initials = (STATE.user.name || 'Kudakwashe Nyapadzauru').split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
-    if (avatar) avatar.textContent = initials || 'KD';
+    const initials = (STATE.user.name || 'User').split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    if (avatar) avatar.textContent = initials || 'US';
     if (nameEl) nameEl.textContent = STATE.user.name;
-    if (roleEl) {
-      roleEl.textContent = 'Lead Architect (Administrator)';
-    }
     if (menuEmailEl) menuEmailEl.textContent = STATE.user.email;
-    if (menuBadgeEl) menuBadgeEl.textContent = 'System Administrator';
 
-    // Administrator has permanent access to Inventory Management
-    if (snavInventory) {
-      snavInventory.classList.remove('hidden');
+    const role = STATE.user.role || 'Student';
+
+    if (role === 'Student') {
+      // ================= STUDENT DASHBOARD =================
+      if (roleEl) roleEl.textContent = `Student Researcher (${STATE.user.studentId || 'Verified'})`;
+      if (menuBadgeEl) {
+        menuBadgeEl.textContent = 'Student Portal';
+        menuBadgeEl.className = 'inline-block mt-1 px-2 py-0.5 rounded text-[9px] font-bold bg-blue-100 text-blue-800';
+      }
+      if (brandSubtitle) brandSubtitle.textContent = 'Student Reserves & Loans';
+      if (heroTitle) heroTitle.textContent = 'Academic Textbook Reserves';
+      if (heroDesc) heroDesc.textContent = 'Student Portal: Browse course textbooks, check physical availability on stacks, and borrow books instantly.';
+      if (snavLoansLabel) snavLoansLabel.textContent = 'My Borrowed Books';
+
+      // Student dashboard: Inventory section is hidden
+      if (snavInventory) snavInventory.classList.add('hidden');
+
+    } else if (role === 'Librarian') {
+      // ================= LIBRARIAN DASHBOARD =================
+      if (roleEl) roleEl.textContent = `Chief Librarian (${STATE.user.studentId || 'Staff'})`;
+      if (menuBadgeEl) {
+        menuBadgeEl.textContent = 'Librarian Desk';
+        menuBadgeEl.className = 'inline-block mt-1 px-2 py-0.5 rounded text-[9px] font-bold bg-purple-100 text-purple-800';
+      }
+      if (brandSubtitle) brandSubtitle.textContent = 'Library Circulation & Stacks';
+      if (heroTitle) heroTitle.textContent = 'Library Circulation & Collection Desk';
+      if (heroDesc) heroDesc.textContent = 'Librarian Portal: Manage textbook inventory, monitor student circulation loans, and catalog new acquisitions.';
+      if (snavLoansLabel) snavLoansLabel.textContent = 'Circulation & Loans';
+
+      // Librarian dashboard: Inventory section is visible
+      if (snavInventory) snavInventory.classList.remove('hidden');
+
+    } else if (role === 'Admin') {
+      // ================= ADMINISTRATOR DASHBOARD =================
+      if (roleEl) roleEl.textContent = `System Administrator (${STATE.user.studentId || 'Lead'})`;
+      if (menuBadgeEl) {
+        menuBadgeEl.textContent = 'Administrator Console';
+        menuBadgeEl.className = 'inline-block mt-1 px-2 py-0.5 rounded text-[9px] font-bold bg-emerald-100 text-emerald-800';
+      }
+      if (brandSubtitle) brandSubtitle.textContent = 'Administrator Console';
+      if (heroTitle) heroTitle.textContent = 'System Architecture & Admin Console';
+      if (heroDesc) heroDesc.textContent = 'Administrator Portal: Comprehensive governance over digital reserves, real-time inventory management, and system operations.';
+      if (snavLoansLabel) snavLoansLabel.textContent = 'All Borrowed Books & Audit';
+
+      // Administrator dashboard: Full inventory management unlocked
+      if (snavInventory) snavInventory.classList.remove('hidden');
     }
   }
 }

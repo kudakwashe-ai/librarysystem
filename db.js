@@ -51,12 +51,32 @@ async function initDB() {
         passwordHash: await bcrypt.hash('Admin@123', salt),
         role: 'Admin',
         studentId: '20240040312',
-        department: 'Computer Science / Software Engineering',
+        department: 'Software Engineering',
+        createdAt: new Date().toISOString()
+      },
+      {
+        id: 'usr-2',
+        name: 'Yai Mabior Reng',
+        email: 'librarian@library.edu',
+        passwordHash: await bcrypt.hash('Librarian@123', salt),
+        role: 'Librarian',
+        studentId: '20240040314',
+        department: 'Library Information Services',
+        createdAt: new Date().toISOString()
+      },
+      {
+        id: 'usr-3',
+        name: 'Naina Mohammed Fathima Saafa',
+        email: 'student@library.edu',
+        passwordHash: await bcrypt.hash('Student@123', salt),
+        role: 'Student',
+        studentId: '20240040325',
+        department: 'Computer Science',
         createdAt: new Date().toISOString()
       }
     ];
     writeJSON(usersFile, users);
-    console.log('[DB] Initialized with Administrator account (Kudakwashe Donell Nyapadzauru - 20240040312)');
+    console.log('[DB] Seeded real group member accounts (Admin, Librarian, Student)');
   }
 
   let books = readJSON(booksFile, null);

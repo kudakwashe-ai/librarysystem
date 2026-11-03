@@ -79,25 +79,30 @@
       <!-- FORM 1: LOGIN -->
       <form id="form-login" onsubmit="handleLoginSubmit(event)" class="space-y-4">
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Administrator Email</label>
-          <input type="email" id="input-login-email" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none transition-colors" placeholder="admin@library.edu" value="admin@library.edu">
+          <label class="block text-xs font-bold text-slate-700 mb-1">Institutional Email</label>
+          <input type="email" id="input-login-email" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none transition-colors" placeholder="user@library.edu">
         </div>
 
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1">Password</label>
-          <input type="password" id="input-login-password" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none transition-colors" placeholder="••••••••" value="Admin@123">
+          <input type="password" id="input-login-password" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none transition-colors" placeholder="••••••••">
         </div>
 
         <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl shadow-lg shadow-blue-500/25 transition-all">
-          Sign In to Admin Dashboard
+          Sign In to Library Portal
         </button>
 
         <div class="pt-4 border-t border-slate-100 text-center">
-          <span class="text-[11px] text-slate-400 block mb-2 font-medium">Administrator Access:</span>
-          <div class="flex items-center justify-center">
-            <button type="button" onclick="fillDemoCredentials('admin')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#09132B] text-white hover:bg-blue-900 transition-all flex items-center gap-2 shadow-xs">
-              <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              <span>Instant Admin Login (Kudakwashe)</span>
+          <span class="text-[11px] text-slate-400 block mb-2 font-medium">Quick Role Sign-In & Dashboard Access:</span>
+          <div class="flex items-center justify-center gap-2">
+            <button type="button" onclick="fillRoleCredentials('student')" class="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-colors flex items-center gap-1">
+              <span>Student</span>
+            </button>
+            <button type="button" onclick="fillRoleCredentials('librarian')" class="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-colors flex items-center gap-1">
+              <span>Librarian</span>
+            </button>
+            <button type="button" onclick="fillRoleCredentials('admin')" class="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-slate-100 text-slate-800 border border-slate-200 hover:bg-slate-200 transition-colors flex items-center gap-1">
+              <span>Administrator</span>
             </button>
           </div>
         </div>
@@ -107,13 +112,13 @@
       <form id="form-register" onsubmit="handleRegisterSubmit(event)" class="hidden space-y-3.5">
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
-          <input type="text" id="reg-name" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="e.g. Jordan Taylor">
+          <input type="text" id="reg-name" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="e.g. Student Name">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1">Email</label>
-            <input type="email" id="reg-email" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="jordan@library.edu">
+            <input type="email" id="reg-email" required class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="user@library.edu">
           </div>
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1">Department</label>
@@ -127,10 +132,11 @@
             <input type="password" id="reg-password" required minlength="6" class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Min 6 chars">
           </div>
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Role</label>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Role & Dashboard</label>
             <select id="reg-role" class="w-full bg-slate-50 text-slate-900 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:border-blue-600 focus:outline-none">
-              <option value="Student">Student</option>
-              <option value="Librarian">Librarian</option>
+              <option value="Student">Student (Reserves & Borrowing)</option>
+              <option value="Librarian">Librarian (Catalog & Stock)</option>
+              <option value="Admin">Administrator (Full Control)</option>
             </select>
           </div>
         </div>
@@ -159,7 +165,7 @@
             </svg>
           </div>
           <h2 class="text-base font-black tracking-tight text-white uppercase">LIBRARYCORE</h2>
-          <p class="text-[11px] text-slate-400 font-medium">Academic Reserves & Catalog</p>
+          <p id="sidebar-brand-subtitle" class="text-[11px] text-slate-400 font-medium">Academic Reserves & Catalog</p>
         </div>
 
         <!-- Sidebar Navigation Items -->
@@ -179,7 +185,7 @@
           <!-- 3. My Borrowed Books -->
           <button data-target="my-loans" onclick="switchNavTab('my-loans')" id="snav-my-loans" class="nav-sidebar-btn nav-item-inactive w-full px-3.5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-3 transition-all text-left">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-            <span>My Borrowed Books</span>
+            <span id="snav-loans-label">My Borrowed Books</span>
           </button>
 
           <!-- 4. Inventory Management (Admin Dashboard) -->
@@ -300,8 +306,8 @@
                 </svg>
               </div>
               <div>
-                <h1 class="text-xl sm:text-2xl font-black text-white tracking-tight">Academic Textbook Reserves</h1>
-                <p class="text-xs sm:text-sm text-blue-100 mt-1 max-w-xl font-normal leading-relaxed">
+                <h1 id="hero-title" class="text-xl sm:text-2xl font-black text-white tracking-tight">Academic Textbook Reserves</h1>
+                <p id="hero-desc" class="text-xs sm:text-sm text-blue-100 mt-1 max-w-xl font-normal leading-relaxed">
                   Browse course textbooks, check physical availability on stacks, and borrow books instantly.
                 </p>
               </div>

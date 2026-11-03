@@ -6,7 +6,47 @@
     "passwordHash": "$2b$10$TU1g00OC0vX7DztIVGV87ugmIj1WhWL/Zqu3ICtx5pAryZsetmv7q",
     "role": "Admin",
     "studentId": "20240040312",
-    "department": "Computer Science / Software Engineering",
+    "department": "Software Engineering",
     "createdAt": "2026-11-03T16:28:51.547Z"
+  },
+  {
+    "id": "usr-2",
+    "name": "Yai Mabior Reng",
+    "email": "librarian@library.edu",
+    "passwordHash": "$2b$10$TU1g00OC0vX7DztIVGV87uZ0g8vqHX1Jbqg.ssvd86do.VZKFlltm",
+    "role": "Librarian",
+    "studentId": "20240040314",
+    "department": "Library Information Services",
+    "createdAt": "2026-11-03T16:28:51.646Z"
+  },
+  {
+    "id": "usr-3",
+    "name": "Naina Mohammed Fathima Saafa",
+    "email": "student@library.edu",
+    "passwordHash": "$2b$10$TU1g00OC0vX7DztIVGV87u8mtce87MVRGyl.DIfdCo/G2NJ0aix06",
+    "role": "Student",
+    "studentId": "20240040325",
+    "department": "Computer Science",
+    "createdAt": "2026-11-03T16:28:51.756Z"
+  },
+  {
+    "id": "usr-4",
+    "name": "Nyimansata Fofana",
+    "email": "nyimansata@library.edu",
+    "passwordHash": "$2b$10$TU1g00OC0vX7DztIVGV87u8mtce87MVRGyl.DIfdCo/G2NJ0aix06",
+    "role": "Student",
+    "studentId": "20240040316",
+    "department": "Computer Science",
+    "createdAt": "2026-11-03T16:28:51.856Z"
+  },
+  {
+    "id": "usr-5",
+    "name": "Milenia Soares Gonçalves",
+    "email": "milenia@library.edu",
+    "passwordHash": "$2b$10$TU1g00OC0vX7DztIVGV87u8mtce87MVRGyl.DIfdCo/G2NJ0aix06",
+    "role": "Student",
+    "studentId": "20240040323",
+    "department": "Computer Science",
+    "createdAt": "2026-11-03T16:28:51.956Z"
   }
 ]
