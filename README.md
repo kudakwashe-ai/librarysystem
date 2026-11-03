@@ -13,13 +13,13 @@ An enterprise-grade, full-stack **Node.js** web application and academic assignm
 ---
 
 ## 👥 Group Identification (3–5 Students)
-| Student Name | Student ID | Assigned Project Role | 5-Minute Presentation Segment |
-| :--- | :--- | :--- | :--- |
-| **Alex Rivera** | STU-ADM-8841 | Lead Software Architect | **Minute 0:00 – 1:00**: Intro & Task 1 Deployment Strategy |
-| **Sarah Chen** | LIB-OPS-8842 | DevOps & Release Engineer | **Minute 1:00 – 2:00**: Task 2 Pre-Deployment Checklist Gates |
-| **Jordan Taylor** | STU-2026-8843 | Site Reliability Engineer (SRE) | **Minute 2:00 – 3:00**: Task 3 Incident Rollback Protocol |
-| **Marcus Vance** | ENG-DEV-8844 | Core Software Engineer | **Minute 3:00 – 4:00**: Task 4 Software Maintenance Quadrants |
-| **Elena Rostova** | PRJ-MGT-8845 | Project Manager & Scrum Master | **Minute 4:00 – 5:00**: Task 5 Monitoring & Project Handover |
+| No. | Full Name | Student ID | Assigned Project Role | 5-Minute Presentation Segment |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | **Yai Mabior Reng** | 20240040314 | Lead Software Architect | **Minute 0:00 – 1:00**: Intro & Task 1 Deployment Strategy |
+| **2** | **Kudakwashe Donell Nyapadzauru** | 20240040312 | DevOps & Release Engineer | **Minute 1:00 – 2:00**: Task 2 Pre-Deployment Checklist Gates |
+| **3** | **Naina Mohammed Fathima Saafa** | 20240040325 | Site Reliability Engineer (SRE) | **Minute 2:00 – 3:00**: Task 3 Incident Rollback Protocol |
+| **4** | **Nyimansata Fofana** | 20240040316 | Core Software Engineer | **Minute 3:00 – 4:00**: Task 4 Software Maintenance Quadrants |
+| **5** | **Milenia Soares Gonçalves** | 20240040323 | Project Manager & Scrum Master | **Minute 4:00 – 5:00**: Task 5 Monitoring & Project Handover |
 
 ---
 

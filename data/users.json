@@ -1,12 +1,12 @@
 [
   {
     "id": "usr-1",
-    "name": "Alex Rivera (Lead Architect)",
+    "name": "Kudakwashe Donell Nyapadzauru",
     "email": "admin@library.edu",
     "passwordHash": "$2b$10$TU1g00OC0vX7DztIVGV87ugmIj1WhWL/Zqu3ICtx5pAryZsetmv7q",
     "role": "Admin",
-    "studentId": "STU-ADM-001",
-    "department": "Software Engineering",
+    "studentId": "20240040312",
+    "department": "Computer Science / Software Engineering",
     "createdAt": "2026-11-03T16:28:51.547Z"
   }
 ]

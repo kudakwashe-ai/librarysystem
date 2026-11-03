@@ -46,17 +46,17 @@ async function initDB() {
     users = [
       {
         id: 'usr-1',
-        name: 'Alex Rivera (Lead Architect)',
+        name: 'Kudakwashe Donell Nyapadzauru',
         email: 'admin@library.edu',
         passwordHash: await bcrypt.hash('Admin@123', salt),
         role: 'Admin',
-        studentId: 'STU-ADM-001',
-        department: 'Software Engineering',
+        studentId: '20240040312',
+        department: 'Computer Science / Software Engineering',
         createdAt: new Date().toISOString()
       }
     ];
     writeJSON(usersFile, users);
-    console.log('[DB] Initialized with single Administrator account (Alex Rivera)');
+    console.log('[DB] Initialized with Administrator account (Kudakwashe Donell Nyapadzauru - 20240040312)');
   }
 
   let books = readJSON(booksFile, null);

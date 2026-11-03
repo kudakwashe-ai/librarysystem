@@ -62,8 +62,8 @@ function showAuthenticatedPortal() {
   const snavInventory = document.getElementById('snav-inventory');
 
   if (STATE.user) {
-    const initials = (STATE.user.name || 'Alex Rivera').split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
-    if (avatar) avatar.textContent = initials || 'AR';
+    const initials = (STATE.user.name || 'Kudakwashe Nyapadzauru').split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    if (avatar) avatar.textContent = initials || 'KD';
     if (nameEl) nameEl.textContent = STATE.user.name;
     if (roleEl) {
       roleEl.textContent = 'Lead Architect (Administrator)';

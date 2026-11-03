@@ -71,7 +71,7 @@
       "action": "Immediate Blue-Green Traffic Pointer Swap (Green -> Blue)",
       "timeToRestore": "42 seconds",
       "rootCause": "CRITICAL REGRESSION: Users unable to authenticate (OAuth JWT handshake failure in Green v1.1.0 release)",
-      "executedBy": "Alex Rivera (Lead Architect)",
+      "executedBy": "Kudakwashe Donell Nyapadzauru (Lead Architect & DevOps)",
       "status": "SYSTEM FULLY RESTORED"
     }
   ]

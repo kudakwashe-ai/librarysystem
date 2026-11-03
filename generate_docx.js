@@ -80,40 +80,40 @@ async function createAssignmentDocx() {
               }),
               new TableRow({
                 children: [
-                  new TableCell({ children: [new Paragraph('Alex Rivera')] }),
-                  new TableCell({ children: [new Paragraph('STU-ADM-8841')] }),
+                  new TableCell({ children: [new Paragraph('Yai Mabior Reng')] }),
+                  new TableCell({ children: [new Paragraph('20240040314')] }),
                   new TableCell({ children: [new Paragraph('Lead Software Architect')] }),
                   new TableCell({ children: [new Paragraph('Minute 0:00 – 1:00: Intro & Task 1')] }),
                 ],
               }),
               new TableRow({
                 children: [
-                  new TableCell({ children: [new Paragraph('Sarah Chen')] }),
-                  new TableCell({ children: [new Paragraph('LIB-OPS-8842')] }),
+                  new TableCell({ children: [new Paragraph('Kudakwashe Donell Nyapadzauru')] }),
+                  new TableCell({ children: [new Paragraph('20240040312')] }),
                   new TableCell({ children: [new Paragraph('DevOps & QA Engineer')] }),
                   new TableCell({ children: [new Paragraph('Minute 1:00 – 2:00: Task 2')] }),
                 ],
               }),
               new TableRow({
                 children: [
-                  new TableCell({ children: [new Paragraph('Jordan Taylor')] }),
-                  new TableCell({ children: [new Paragraph('STU-2026-8843')] }),
+                  new TableCell({ children: [new Paragraph('Naina Mohammed Fathima Saafa')] }),
+                  new TableCell({ children: [new Paragraph('20240040325')] }),
                   new TableCell({ children: [new Paragraph('Site Reliability Engineer (SRE)')] }),
                   new TableCell({ children: [new Paragraph('Minute 2:00 – 3:00: Task 3')] }),
                 ],
               }),
               new TableRow({
                 children: [
-                  new TableCell({ children: [new Paragraph('Marcus Vance')] }),
-                  new TableCell({ children: [new Paragraph('ENG-DEV-8844')] }),
+                  new TableCell({ children: [new Paragraph('Nyimansata Fofana')] }),
+                  new TableCell({ children: [new Paragraph('20240040316')] }),
                   new TableCell({ children: [new Paragraph('Core Software Engineer')] }),
                   new TableCell({ children: [new Paragraph('Minute 3:00 – 4:00: Task 4')] }),
                 ],
               }),
               new TableRow({
                 children: [
-                  new TableCell({ children: [new Paragraph('Elena Rostova')] }),
-                  new TableCell({ children: [new Paragraph('PRJ-MGT-8845')] }),
+                  new TableCell({ children: [new Paragraph('Milenia Soares Gonçalves')] }),
+                  new TableCell({ children: [new Paragraph('20240040323')] }),
                   new TableCell({ children: [new Paragraph('Project Manager & Scrum Master')] }),
                   new TableCell({ children: [new Paragraph('Minute 4:00 – 5:00: Task 5 & Closure')] }),
                 ],
@@ -418,35 +418,35 @@ async function createAssignmentDocx() {
           new Paragraph({
             spacing: { after: 60 },
             children: [
-              new TextRun({ text: 'Minute 0:00 – 1:00 (Alex Rivera - Lead Architect): ', bold: true }),
+              new TextRun({ text: 'Minute 0:00 – 1:00 (Yai Mabior Reng - Lead Architect, ID: 20240040314): ', bold: true }),
               new TextRun('Introduce Online Library System case study. Present Blue-Green Deployment strategy and justify why it was selected over Big-Bang and Rolling releases to ensure zero downtime for students.'),
             ],
           }),
           new Paragraph({
             spacing: { after: 60 },
             children: [
-              new TextRun({ text: 'Minute 1:00 – 2:00 (Sarah Chen - DevOps Engineer): ', bold: true }),
+              new TextRun({ text: 'Minute 1:00 – 2:00 (Kudakwashe Donell Nyapadzauru - DevOps Engineer, ID: 20240040312): ', bold: true }),
               new TextRun('Present the 5 Pre-Deployment Checklist Gates (DB migration dry-run, OWASP security audit, 5,000-user load test, librarian UAT sign-off, S3 disaster recovery backup).'),
             ],
           }),
           new Paragraph({
             spacing: { after: 60 },
             children: [
-              new TextRun({ text: 'Minute 2:00 – 3:00 (Jordan Taylor - SRE Specialist): ', bold: true }),
+              new TextRun({ text: 'Minute 2:00 – 3:00 (Naina Mohammed Fathima Saafa - SRE Specialist, ID: 20240040325): ', bold: true }),
               new TextRun('Walk through the Rollback Playbook when users cannot log in. Detail the 4 phases: detection, 30-second router pointer failover to Blue, token cache flushing, and forensic RCA.'),
             ],
           }),
           new Paragraph({
             spacing: { after: 60 },
             children: [
-              new TextRun({ text: 'Minute 3:00 – 4:00 (Marcus Vance - Software Engineer): ', bold: true }),
+              new TextRun({ text: 'Minute 3:00 – 4:00 (Nyimansata Fofana - Software Engineer, ID: 20240040316): ', bold: true }),
               new TextRun('Explain the 4 Software Maintenance types using concrete library system examples (Corrective race condition fix, Adaptive Azure AD SAML upgrade, Perfective sub-50ms search index, Preventive weekly DB vacuuming).'),
             ],
           }),
           new Paragraph({
             spacing: { after: 80 },
             children: [
-              new TextRun({ text: 'Minute 4:00 – 5:00 (Elena Rostova - Project Manager): ', bold: true }),
+              new TextRun({ text: 'Minute 4:00 – 5:00 (Milenia Soares Gonçalves - Project Manager, ID: 20240040323): ', bold: true }),
               new TextRun('Review the 3 System Performance Indicators (P95 Latency < 200ms, Error rate < 0.1%, CPU/Mem < 70%) and present the 5 Handover Activities for formal project closure.'),
             ],
           }),
